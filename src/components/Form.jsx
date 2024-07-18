@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 
 import styles from "./Form.module.css";
@@ -24,76 +22,86 @@ export function convertToEmoji(countryCode) {
 
 function Form() {
   const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
-  const[lat,lng] = useUrlPosition();
+  const [lat, lng] = useUrlPosition();
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
-  const[isLoadingGeoCoding,setIsLoadingGeoCoding] = useState(false);
-  const[emoji,setEmoji] = useState("");
-  const[geoCodingError,setGeoCodingError]= useState("");
-  const {createCity,isLoading} = useCities();
+  const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
+  const [emoji, setEmoji] = useState("");
+  const [geoCodingError, setGeoCodingError] = useState("");
+  const { createCity, isLoading } = useCities();
   const navigate = useNavigate();
 
-  useEffect(function(){
-   async function fetchCityData(){
-    try{
-      setIsLoadingGeoCoding(true);
-      setGeoCodingError('');
-      const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`);
-      const data = await res.json();
-      if(!data.countryCode) throw new Error("Click on a fricking city🤦")
+  useEffect(
+    function () {
+      async function fetchCityData() {
+        try {
+          setIsLoadingGeoCoding(true);
+          setGeoCodingError("");
+          const res = await fetch(
+            `${BASE_URL}?latitude=${lat}&longitude=${lng}`,
+          );
+          const data = await res.json();
+          if (!data.countryCode) throw new Error("Click on a fricking city🤦");
 
-      setCityName(data.city || data.locality || "");
-      setCountry(data.countryName);
-      setEmoji(convertToEmoji(data.countryCode));
-    }catch(err){
-      setGeoCodingError(err.message)
-    }finally{
-      setIsLoadingGeoCoding(false);
-    }
-   }
-   fetchCityData();
-  },[lat,lng]);
+          setCityName(data.city || data.locality || "");
+          setCountry(data.countryName);
+          setEmoji(convertToEmoji(data.countryCode));
+        } catch (err) {
+          setGeoCodingError(err.message);
+        } finally {
+          setIsLoadingGeoCoding(false);
+        }
+      }
+      fetchCityData();
+    },
+    [lat, lng],
+  );
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
-    if(!cityName || !date)return;
+    if (!cityName || !date) return;
     const newCity = {
       cityName,
       country,
       emoji,
       date,
       notes,
-      position:{lat,lng},
+      position: { lat, lng },
     };
     await createCity(newCity);
-    navigate("/app/cities")
+    navigate("/app/cities");
   }
-   
-  if(isLoadingGeoCoding) return <Spinner/> ;
+
+  if (isLoadingGeoCoding) return <Spinner />;
   // if() return <Message message="Start by clicking somewhere on the map"/>
-  if(geoCodingError) return <Message message = {geoCodingError} />;
+  if (geoCodingError) return <Message message={geoCodingError} />;
   return (
-    <form className={`${styles.form} ${isLoading ? styles.loading : ""}`} onSubmit={(e)=>handleSubmit(e)}>
-        <div className={styles.row}>
+    <form
+      className={`${styles.form} ${isLoading ? styles.loading : ""}`}
+      onSubmit={(e) => handleSubmit(e)}
+    >
+      <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
           id="cityName"
           onChange={(e) => setCityName(e.target.value)}
           value={cityName}
-          
         />
         <span className={styles.flag}>{emoji}</span>
       </div>
 
       <div className={styles.row}>
-        <label htmlFor="date">When did you go to {cityName},{country}?</label>
+        <label htmlFor="date">
+          When did you go to {cityName},{country}?
+        </label>
         <DatePicker
-        id = "id" 
-        onChange={date => setDate(date)} 
-        selected = {date} 
-        dateFormat='dd/MM/yyyy'/>
+          id="id"
+          onChange={(date) => setDate(date)}
+          selected={date}
+          dateFormat="dd/MM/yyyy"
+        />
       </div>
 
       <div className={styles.row}>
@@ -106,8 +114,8 @@ function Form() {
       </div>
 
       <div className={styles.buttons}>
-        <Button type='primary'>Add</Button>
-        <BackButton/>
+        <Button type="primary">Add</Button>
+        <BackButton />
       </div>
     </form>
   );
