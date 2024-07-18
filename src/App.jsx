@@ -17,7 +17,7 @@ function App() {
     <CitiesContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="https://prathibhaamalladinne.github.io/tracky-app/" element={<Homepage />} />
           <Route path="login" element={<Login />} />
           <Route path="product" element={<Product />} />
           <Route path="pricing" element={<Pricing />} />
