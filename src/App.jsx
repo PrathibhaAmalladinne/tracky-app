@@ -17,7 +17,7 @@ function App() {
     <CitiesContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="login" element={<Login />} />
           <Route path="product" element={<Product />} />
           <Route path="pricing" element={<Pricing />} />
