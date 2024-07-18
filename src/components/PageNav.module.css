@@ -25,8 +25,8 @@
   color: var(--color-brand--2);
 }
 
-a.ctaLink:link,
-a.ctaLink:visited {
+a.ctaLink:link:global,
+a.ctaLink:visited:global {
   background-color: var(--color-brand--2);
   color: var(--color-dark--0);
   padding: 0.8rem 2rem;

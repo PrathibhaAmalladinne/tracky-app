@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import styles from "./Login.module.css";
 import { useState } from "react";
@@ -10,7 +10,11 @@ function Login() {
   const [password, setPassword] = useState("qwerty");
   return (
     <main className={styles.login}>
-      <PageNav />
+      <PageNav >
+      <NavLink to="/login" className={styles.ctaLink}>
+            Login
+      </NavLink>
+      </PageNav>
       <form className={styles.form}>
         <div className={styles.row}>
           <label htmlFor="email">Email Address</label>
@@ -29,7 +33,7 @@ function Login() {
           />
         </div>
         <div>
-          <Link to="home">
+          <Link to="/app">
             <button className={styles.btn}>Login</button>
           </Link>
         </div>

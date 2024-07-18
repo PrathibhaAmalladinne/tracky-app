@@ -59,6 +59,42 @@
         "lat": "44.49948489244186",
         "lng": "0.3700562003161867"
       }
+    },
+    {
+      "id": "61af",
+      "cityName": "Enford",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "emoji": "🇬🇧",
+      "date": "2024-07-18T11:00:28.893Z",
+      "notes": "",
+      "position": {
+        "lat": "51.27527476871483",
+        "lng": "-1.7778386200611254"
+      }
+    },
+    {
+      "id": "1b17",
+      "cityName": "Guiscriff",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-07-18T11:09:33.745Z",
+      "notes": "",
+      "position": {
+        "lat": "48.0328265242037",
+        "lng": "-3.6026020949790913"
+      }
+    },
+    {
+      "id": "8e3f",
+      "cityName": "Sankagiri",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-07-18T11:09:40.675Z",
+      "notes": "",
+      "position": {
+        "lat": "11.520247332132609",
+        "lng": "77.76301355459587"
+      }
     }
   ]
 }

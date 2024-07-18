@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // // import PageNav from "./components/PageNav.jsx"
 import styles from "./Homepage.module.css";
 import PageNav from "../components/PageNav";
@@ -6,7 +6,11 @@ import PageNav from "../components/PageNav";
 function Homepage() {
   return (
     <main className={styles.homepage}>
-      <PageNav />
+      <PageNav >
+      <NavLink to="/login" className={styles.ctaLink}>
+            Login
+          </NavLink>
+      </PageNav>
       <section>
         <h1>
           You travel the world.
@@ -17,7 +21,7 @@ function Homepage() {
           Your footprints in the sand can be logged no matter which corner of
           the world. Let your loved ones know and see your adventures!
         </h2>
-        <Link to="/app" className="cta">
+        <Link to="login" className="cta">
           Start tracking now
         </Link>
       </section>

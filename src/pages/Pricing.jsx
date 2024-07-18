@@ -1,10 +1,15 @@
+import { NavLink } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import styles from "./Pricing.module.css";
 
 function Pricing() {
   return (
     <main className={styles.pricing}>
-      <PageNav />
+      <PageNav>
+      <NavLink to="/login" className={styles.ctaLink}>
+            Login
+          </NavLink>
+      </PageNav>
       <section >
         <div>
           <h2>
@@ -18,10 +23,6 @@ function Pricing() {
             absolute blah.
           </p>
         </div>
-        {/* <img
-          src="./public/img-2.jpg"
-          alt="overview of a large city with skyscrappers"
-        /> */}
       </section>
     </main>
   );

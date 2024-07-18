@@ -4,7 +4,7 @@ function PageNotFound() {
   return (
     <div>
       <PageNav />
-      Error 404 :(
+     <h1 style="color:red;" > Error 404 :( </h1>
     </div>
   );
 }
