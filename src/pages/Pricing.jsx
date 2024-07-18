@@ -1,11 +1,11 @@
 import PageNav from "../components/PageNav";
-import styles from "./Product.module.css";
+import styles from "./Pricing.module.css";
 
 function Pricing() {
   return (
-    <main className={styles.product}>
+    <main className={styles.pricing}>
       <PageNav />
-      <section>
+      <section >
         <div>
           <h2>
             Simple pricing.
@@ -18,10 +18,10 @@ function Pricing() {
             absolute blah.
           </p>
         </div>
-        <img
+        {/* <img
           src="./public/img-2.jpg"
           alt="overview of a large city with skyscrappers"
-        />
+        /> */}
       </section>
     </main>
   );

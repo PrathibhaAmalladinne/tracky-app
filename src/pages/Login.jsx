@@ -5,6 +5,7 @@ import { useState } from "react";
 // import Homepage from "./Homepage";
 
 function Login() {
+  // const[logout,setLogout] = useState(false);
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
   return (
@@ -28,7 +29,7 @@ function Login() {
           />
         </div>
         <div>
-          <Link to="/">
+          <Link to="home">
             <button className={styles.btn}>Login</button>
           </Link>
         </div>

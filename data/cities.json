@@ -35,6 +35,30 @@
         "lng": 13.376933665713324
       },
       "id": "98443197"
+    },
+    {
+      "id": "b224",
+      "cityName": "Le Dorat",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-07-18T09:03:56.451Z",
+      "notes": "",
+      "position": {
+        "lat": "46.195042108660154",
+        "lng": "1.0986328125000002"
+      }
+    },
+    {
+      "id": "fe0f",
+      "cityName": "Saint-Barthelemy-d'Agenais",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-07-18T10:34:34.204Z",
+      "notes": "",
+      "position": {
+        "lat": "44.49948489244186",
+        "lng": "0.3700562003161867"
+      }
     }
   ]
 }

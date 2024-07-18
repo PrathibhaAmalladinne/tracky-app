@@ -13,12 +13,14 @@ import Form from "./components/Form";
 import { CitiesContextProvider } from "./contexts/CitiesContext";
 
 function App() {
+ 
   return (
+ 
     <CitiesContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="login" element={<Login />} />
+          <Route index element={<Login />} />
+          <Route path="home" element={<Homepage />} />
           <Route path="product" element={<Product />} />
           <Route path="pricing" element={<Pricing />} />
           <Route path="app" element={<AppLayout />}>

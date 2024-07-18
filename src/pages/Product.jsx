@@ -5,10 +5,6 @@ function product() {
     <main className={styles.product}>
       <PageNav />
       <section>
-        <img
-          src="./public/img-1.jpg"
-          alt="overview of a large city with skyscrappers"
-        />
         <div>
           <h2>About Worlswise.</h2>
           <p>

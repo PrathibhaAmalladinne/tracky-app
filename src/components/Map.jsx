@@ -40,16 +40,20 @@ function Map() {
     [geoLocationPosition],
   );
   return (
-    // <div className={styles.mapContainer} >
+    // < className={styles.mapContainer} >
     //     {!geoLocationPosition && <Button type="position" onClick={getPosition}>
     //         {isLoadingPosition ? 'Loading...' : 'Use your current location'}
     //     </Button>}
+    
+   
     <div className={styles.mapContainer}>
-      {!geoLocationPosition && (
-        <Button type="position" onClick={getPosition}>
-          {isLoadingPosition ? "Loading..." : "Use your position"}
-        </Button>
-      )}
+       {!geoLocationPosition && (
+      <Button type="position" onClick={getPosition}>
+        {isLoadingPosition ? "Loading..." : "Use your position"}
+      </Button>
+    )}
+        
+        
       <MapContainer
         center={mapPosition}
         zoom={6}
@@ -68,6 +72,7 @@ function Map() {
             <Popup>
               <span>{city.cityName}</span>
             </Popup>
+            
           </Marker>
         ))}
 
