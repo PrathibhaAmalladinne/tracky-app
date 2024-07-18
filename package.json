@@ -14,6 +14,7 @@
     "server": "json-server --watch data/cities.json"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-datepicker": "^7.3.0",
